@@ -41,6 +41,6 @@ module mapped2obi #(
  
   assign mapped_req_ready_o = obi_agnt_i;
   assign mapped_rsp_data_o = obi_rdata_i;
-  assign mapped_rsp_error_o = obi_err_i;
+  assign mapped_rsp_error_o = obi_rerr_i;
   assign mapped_rsp_valid_o = obi_rvalid_i;
 endmodule
