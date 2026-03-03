@@ -1,0 +1,39 @@
+from collections.abc import Callable
+
+from cocotb.handle import HierarchyObject
+from forastero.io import BaseIO, IORole
+
+
+class ObiChAIO(BaseIO):
+    def __init__(
+        self,
+        dut: HierarchyObject,
+        name: str,
+        role: IORole,
+        io_style: Callable[[str | None, str, IORole, IORole], str] | None = None,
+    ):
+        super().__init__(
+            dut, 
+            name, 
+            role, 
+            ["req", "addr", "wdata", "we", "be"], 
+            ["gnt"], 
+            io_style
+        )
+
+class ObiChRIO(BaseIO):
+    def __init__(
+        self,
+        dut: HierarchyObject,
+        name: str,
+        role: IORole,
+        io_style: Callable[[str | None, str, IORole, IORole], str] | None = None,
+    ):
+        super().__init__(
+            dut, 
+            name, 
+            role, 
+            ["ready"], 
+            ["valid", "data", "err"], 
+            io_style
+        )
