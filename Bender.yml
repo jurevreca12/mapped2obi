@@ -1,0 +1,7 @@
+package:
+  name: mapped2obi
+  authors:
+    - "Jure Vreča <jure.vreca@ijs.si>"
+
+sources:
+    - src/mapped2obi.sv
